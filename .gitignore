@@ -1,0 +1,20 @@
+# Xcode & Swift Package Manager
+.build/
+.swiftpm/
+*.xcuserdatad/
+*.xcuserstate
+*.xcscmblueprint
+xcuserdata/
+DerivedData/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary build outputs
+dist/
+
+# Generated logs & scratch
+*.log
