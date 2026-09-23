@@ -1,0 +1,45 @@
+name: FrameLab
+options:
+  bundleIdPrefix: com.legendprixai
+  deploymentTarget:
+    iOS: 17.0
+    macOS: 14.0
+
+packages:
+  FrameLab:
+    path: .
+
+targets:
+  FrameLabIOS:
+    type: application
+    platform: iOS
+    deploymentTarget: 17.0
+    sources:
+      - path: Apps/FrameLabIOS
+    dependencies:
+      - package: FrameLab
+        product: FrameLabCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.legendprixai.framelab
+        DEVELOPMENT_TEAM: A54KS68ZGH
+        CODE_SIGN_STYLE: Automatic
+        INFOPLIST_FILE: Apps/FrameLabIOS/Info.plist
+        TARGETED_DEVICE_FAMILY: 1,2
+        SWIFT_VERSION: 5.9
+
+  FrameLabMac:
+    type: application
+    platform: macOS
+    deploymentTarget: 14.0
+    sources:
+      - path: Apps/FrameLabMac
+    dependencies:
+      - package: FrameLab
+        product: FrameLabCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.legendprixai.framelab.mac
+        DEVELOPMENT_TEAM: A54KS68ZGH
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_VERSION: 5.9
