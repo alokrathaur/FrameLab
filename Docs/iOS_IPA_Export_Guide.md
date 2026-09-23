@@ -101,13 +101,15 @@ The resulting file will be located at `./dist/ios/FrameLabIOS.ipa`.
 
 ## 5. How to Install the `.ipa` on iPhone
 
-### Option 0: Direct Wireless Install via Diawi QR Code (Fastest)
-Scan this QR code with your iPhone camera or open [https://i.diawi.com/fivdHX](https://i.diawi.com/fivdHX) in Mobile Safari:
+### Option 0: Official Apple TestFlight Public Beta (Recommended & Universal)
+Scan this QR code with your iPhone camera or open [https://testflight.apple.com/join/hfQEg5wB](https://testflight.apple.com/join/hfQEg5wB) in Mobile Safari:
 
 <p align="center">
-  <a href="https://i.diawi.com/fivdHX">
-    <img src="assets/diawi_qr_code.png" width="200" alt="Diawi QR Code" />
+  <a href="https://testflight.apple.com/join/hfQEg5wB">
+    <img src="assets/testflight_qr_code.png" width="200" alt="TestFlight Public Beta QR Code" />
   </a>
+  <br>
+  <a href="https://testflight.apple.com/join/hfQEg5wB">👉 <strong>Join TestFlight Beta: https://testflight.apple.com/join/hfQEg5wB</strong></a>
 </p>
 
 

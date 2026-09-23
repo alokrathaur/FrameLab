@@ -107,20 +107,7 @@ Install FrameLab directly on your iPhone or iPad with 1 tap — no computer, no 
 
 ---
 
-#### 📲 Option B: Direct Wireless Install (Diawi Ad-Hoc)
-Scan this QR code with your iPhone camera or tap the direct Diawi link below to install **FrameLab** over the air (requires device UDID enrolled):
-
-<p align="center">
-  <a href="https://i.diawi.com/fivdHX">
-    <img src="Docs/assets/diawi_qr_code.png" width="200" alt="FrameLab Diawi QR Code Install" />
-  </a>
-  <br>
-  <a href="https://i.diawi.com/fivdHX">👉 <strong>Direct Install Link: https://i.diawi.com/fivdHX</strong></a>
-</p>
-
-> **Note for iOS 17+:** Ensure Developer Mode is turned on (**Settings → Privacy & Security → Developer Mode**).
-
-#### ⚡ Option C: Sideloadly (Any Apple ID)
+#### ⚡ Option B: Sideload via IPA (Offline / Personal Apple ID)
 The standalone `FrameLabIOS.ipa` package is pre-built in the repository root:
 1. Connect your iPhone via USB.
 2. Open [Sideloadly](https://sideloadly.io/) or [AltStore](https://altstore.io/) on your Mac/PC.
