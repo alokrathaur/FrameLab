@@ -29,6 +29,8 @@ targets:
         SWIFT_VERSION: 5.9
         MARKETING_VERSION: 1.0.0
         CURRENT_PROJECT_VERSION: 1
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
 
   FrameLabMac:
     type: application

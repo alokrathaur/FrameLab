@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		004E24746312640951D65A83 /* FrameLabIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DD07C9ABD8B5C07D742AD0 /* FrameLabIOSApp.swift */; };
 		0CF2823C25A01BAEFB1D0ACF /* IOSShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E52A4044103CE58FC8B24 /* IOSShareSheet.swift */; };
+		134DD7645BEA34B0CFAC81FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50FAE328321F7D48AA5611B1 /* Assets.xcassets */; };
 		192FED834F55FC3E9F8F860C /* FrameLabCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6118C1B5698A9DD148B33DD7 /* FrameLabCore */; };
 		1D1943A14DE6EDEC64A539CE /* IOSBenchmarkSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A2949EE72CA50F662945D7 /* IOSBenchmarkSheet.swift */; };
 		50AC10EB4CA7FE166EF1FA95 /* IOSVideoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0EEA2E9EAE0F63AFFD4E70 /* IOSVideoPicker.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3CA32F2DF2C9D183BFCDBE23 /* IOSContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSContentView.swift; sourceTree = "<group>"; };
+		50FAE328321F7D48AA5611B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D1D86D99CFC2B77AFA9FE3B /* MacVideoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacVideoPicker.swift; sourceTree = "<group>"; };
 		6D40ABF0861CE22EA7F26753 /* FrameLabMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrameLabMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DD07C9ABD8B5C07D742AD0 /* FrameLabIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameLabIOSApp.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		00E1BC6277D0C1536BC2F361 /* FrameLabIOS */ = {
 			isa = PBXGroup;
 			children = (
+				50FAE328321F7D48AA5611B1 /* Assets.xcassets */,
 				A8DD07C9ABD8B5C07D742AD0 /* FrameLabIOSApp.swift */,
 				E9836FDD25926EEA8C0C7089 /* Info.plist */,
 				F9A2949EE72CA50F662945D7 /* IOSBenchmarkSheet.swift */,
@@ -117,6 +120,7 @@
 			buildConfigurationList = 41B8E4A9C34B1BBA7A6BFFFB /* Build configuration list for PBXNativeTarget "FrameLabIOS" */;
 			buildPhases = (
 				7A202802B7FAE1CF01415B47 /* Sources */,
+				2F7FA45388BB2E32E521A034 /* Resources */,
 				8ADD84B50DB3EC209A9E7B68 /* Frameworks */,
 			);
 			buildRules = (
@@ -191,6 +195,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F7FA45388BB2E32E521A034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				134DD7645BEA34B0CFAC81FD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A202802B7FAE1CF01415B47 /* Sources */ = {
@@ -286,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -348,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
