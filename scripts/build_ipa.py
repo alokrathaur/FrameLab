@@ -88,8 +88,43 @@ subprocess.run([
     '-o', app_bin
 ] + ios_swift, check=True)
 
-print("[5/6] Creating Info.plist and extracting retina app icons...")
-info_plist = """<?xml version="1.0" encoding="UTF-8"?>
+# Determine bundle identifier from profile if present, else default
+bundle_id = "com.legendprixai.framelab"
+
+# Check for provisioning profile early
+profile_path = None
+for candidate in [
+    os.path.join(repo_dir, 'embedded.mobileprovision'),
+    os.path.join(repo_dir, 'FrameLab.mobileprovision'),
+]:
+    if os.path.exists(candidate):
+        profile_path = candidate
+        break
+
+if not profile_path:
+    for f in os.listdir(repo_dir):
+        if f.endswith('.mobileprovision'):
+            profile_path = os.path.join(repo_dir, f)
+            break
+
+if profile_path and os.path.exists(profile_path):
+    # Try reading bundle ID from profile
+    ent_xml = subprocess.run(['security', 'cms', '-D', '-i', profile_path], capture_output=True, text=True)
+    if ent_xml.returncode == 0:
+        try:
+            p_data = plistlib.loads(ent_xml.stdout.encode('utf-8'))
+            app_id = p_data.get('Entitlements', {}).get('application-identifier', '')
+            if '.' in app_id:
+                # Strip Team ID prefix (e.g. A54KS68ZGH.com.legendprixai.framelab -> com.legendprixai.framelab)
+                extracted_bundle = app_id.split('.', 1)[1]
+                if extracted_bundle != '*':
+                    bundle_id = extracted_bundle
+                    print(f"  -> Extracted Bundle Identifier from profile: {bundle_id}")
+        except Exception:
+            pass
+
+print(f"[5/6] Creating Info.plist (Bundle ID: {bundle_id}) and extracting retina app icons...")
+info_plist = f"""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -100,7 +135,7 @@ info_plist = """<?xml version="1.0" encoding="UTF-8"?>
     <key>CFBundleExecutable</key>
     <string>FrameLabIOS</string>
     <key>CFBundleIdentifier</key>
-    <string>com.alok.framelab</string>
+    <string>{bundle_id}</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
