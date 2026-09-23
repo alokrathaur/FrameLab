@@ -6,6 +6,24 @@ Tagline: **Inspect. Process. Benchmark.**
 
 ![FrameLab macOS Main Player Interface](Docs/assets/framelab_main_ui.png)
 
+---
+
+## iOS Application Demo
+
+Watch the uncompressed video playback, rational `CMTime` scrubbing, and live 5-engine processing switcher running natively on an iPhone:
+
+<p align="center">
+  <video src="https://raw.githubusercontent.com/alokrathaur/FrameLab/main/Docs/assets/ios_app_demo.mp4" poster="https://raw.githubusercontent.com/alokrathaur/FrameLab/main/Docs/assets/ios_app_demo_poster.png" controls="controls" width="320" style="max-width: 100%; border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.2);">
+    <a href="https://raw.githubusercontent.com/alokrathaur/FrameLab/main/Docs/assets/ios_app_demo.mp4">
+      <img src="Docs/assets/ios_app_demo.gif" width="300" alt="iOS App Live Demo" />
+    </a>
+  </video>
+  <br>
+  <a href="Docs/assets/ios_app_demo.mp4">▶️ <strong>Watch Full 48s HD iOS Demo Video</strong></a>
+</p>
+
+---
+
 ## Purpose
 
 The project is intentionally small, but its architecture demonstrates Apple video-processing concepts relevant to a Mac/iOS video engineering role:

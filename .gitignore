@@ -21,6 +21,8 @@ dist/
 
 # Media files
 *.mp4
+!Docs/assets/*.mp4
 *.MP4
+!Docs/assets/*.MP4
 *.mov
 *.MOV
