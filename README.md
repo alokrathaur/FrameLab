@@ -1,5 +1,12 @@
 # FrameLab
 
+<p align="left">
+  <a href="https://testflight.apple.com/join/hfQEg5wB"><img src="https://img.shields.io/badge/TestFlight-Join_Beta-blue?style=flat-square&logo=apple&logoColor=white" alt="TestFlight Beta" /></a>
+  <img src="https://img.shields.io/badge/Platform-macOS_%7C_iOS-black?style=flat-square&logo=apple" alt="Platform" />
+  <img src="https://img.shields.io/badge/Swift-5.9+-orange?style=flat-square&logo=swift" alt="Swift" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
+</p>
+
 FrameLab is a cross-platform macOS + iOS video engineering demonstration project built in Swift and SwiftUI.
 
 Tagline: **Inspect. Process. Benchmark.**
@@ -76,14 +83,36 @@ Double-click `FrameLab.dmg` in the repository root or mount from terminal:
 open FrameLab.dmg
 ```
 
-### 4. Install & Test on iPhone (Scan QR Code or Sideload)
+### 4. Install & Test on iPhone / iPad
 
-#### 📲 Option A: Direct Wireless Install (Scan with iPhone Camera)
-Scan this QR code with your iPhone camera or tap the direct Diawi link below to install **FrameLab** over the air:
+#### 🚀 Option A: Official Apple TestFlight Public Beta (Recommended)
+
+[![TestFlight Beta](https://img.shields.io/badge/TestFlight-Public_Beta-blue?style=for-the-badge&logo=apple&logoColor=white)](https://testflight.apple.com/join/hfQEg5wB)
+
+Install FrameLab directly on your iPhone or iPad with 1 tap — no computer, no cable, and no UDID registration needed!
+
+<p align="center">
+  <a href="https://testflight.apple.com/join/hfQEg5wB">
+    <img src="Docs/assets/testflight_qr_code.png" width="220" alt="FrameLab TestFlight Public Beta QR Code" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+  </a>
+  <br>
+  <a href="https://testflight.apple.com/join/hfQEg5wB">
+    👉 <strong>Join Public Beta: https://testflight.apple.com/join/hfQEg5wB</strong>
+  </a>
+</p>
+
+1. Open the [TestFlight Link](https://testflight.apple.com/join/hfQEg5wB) on your device or scan the QR code above with your Camera.
+2. Tap **View in App Store** to get the free Apple TestFlight app if not already installed.
+3. Tap **Accept** and **Install** to test FrameLab immediately.
+
+---
+
+#### 📲 Option B: Direct Wireless Install (Diawi Ad-Hoc)
+Scan this QR code with your iPhone camera or tap the direct Diawi link below to install **FrameLab** over the air (requires device UDID enrolled):
 
 <p align="center">
   <a href="https://i.diawi.com/fivdHX">
-    <img src="Docs/assets/diawi_qr_code.png" width="220" alt="FrameLab Diawi QR Code Install" />
+    <img src="Docs/assets/diawi_qr_code.png" width="200" alt="FrameLab Diawi QR Code Install" />
   </a>
   <br>
   <a href="https://i.diawi.com/fivdHX">👉 <strong>Direct Install Link: https://i.diawi.com/fivdHX</strong></a>
@@ -91,7 +120,7 @@ Scan this QR code with your iPhone camera or tap the direct Diawi link below to 
 
 > **Note for iOS 17+:** Ensure Developer Mode is turned on (**Settings → Privacy & Security → Developer Mode**).
 
-#### ⚡ Option B: Sideloadly (Any Apple ID)
+#### ⚡ Option C: Sideloadly (Any Apple ID)
 The standalone `FrameLabIOS.ipa` package is pre-built in the repository root:
 1. Connect your iPhone via USB.
 2. Open [Sideloadly](https://sideloadly.io/) or [AltStore](https://altstore.io/) on your Mac/PC.
