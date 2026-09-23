@@ -89,7 +89,7 @@ subprocess.run([
 ] + ios_swift, check=True)
 
 # Determine bundle identifier from profile if present, else default
-bundle_id = "com.legendprixai.framelab"
+bundle_id = "com.legendprixai.framelabios"
 
 # Check for provisioning profile early
 profile_path = None

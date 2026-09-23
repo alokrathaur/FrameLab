@@ -21,7 +21,7 @@ targets:
         product: FrameLabCore
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.legendprixai.framelab
+        PRODUCT_BUNDLE_IDENTIFIER: com.legendprixai.framelabios
         DEVELOPMENT_TEAM: A54KS68ZGH
         CODE_SIGN_STYLE: Automatic
         INFOPLIST_FILE: Apps/FrameLabIOS/Info.plist

@@ -26,7 +26,7 @@ If your iPhone is connected to your Mac, Xcode can install and launch the app di
 4. In Project Settings under **Signing & Capabilities**:
    - Check **"Automatically manage signing"**.
    - Select your **Personal Team** (your Apple ID).
-   - Set a unique Bundle Identifier (e.g. `com.legendprixai.framelab`).
+   - Set a unique Bundle Identifier (e.g. `com.legendprixai.framelabios`).
 5. Press **Cmd + R (Run)**.
    - Xcode will compile `FrameLabCore` and the iOS SwiftUI app for ARM64, sign it with your personal certificate, install it on your iPhone, and launch it with live debugging!
 
