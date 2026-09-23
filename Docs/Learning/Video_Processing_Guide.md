@@ -61,6 +61,8 @@ FrameLab is designed as a clean, technically credible macOS and iOS video-engine
   - **Color Space**: Color primaries and transfer characteristics (e.g., `BT.709` for HD, `BT.2020` for HDR).
   - **File Size**: Human-readable file size in `MB`.
 
+![FrameLab Main Interface](assets/framelab_main_ui.png)
+
 ### 1.2 5-Engine Live Processing Switcher
 - The top toolbar displays an engine picker: **Original**, **Metal**, **Accelerate**, **C**, **Objective-C**, and **Swift**.
 - Switching engines happens immediately during playback without pausing or recreating the decoder.
@@ -78,6 +80,8 @@ FrameLab is designed as a clean, technically credible macOS and iOS video-engine
 - Bounded async streams (`BoundedFrameStream`) ensure slow processing engines drop frames rather than backlog the decoder or freeze the user interface.
 
 ### 1.5 Statistical Benchmarking Suite
+
+![FrameLab Processing Benchmark](assets/framelab_benchmark_modal.png)
 - Opens a dedicated benchmarking sheet.
 - Runs 100 consecutive frames through all 5 engines under identical conditions.
 - Profiles execution times with microsecond precision and computes:
