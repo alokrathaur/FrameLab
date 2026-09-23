@@ -142,6 +142,14 @@ info_plist = f"""<?xml version="1.0" encoding="UTF-8"?>
     <string>FrameLab</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
+    <key>CFBundleSupportedPlatforms</key>
+    <array>
+        <string>iPhoneOS</string>
+    </array>
+    <key>DTPlatformName</key>
+    <string>iphoneos</string>
+    <key>DTSDKName</key>
+    <string>iphoneos17.0</string>
     <key>CFBundleShortVersionString</key>
     <string>1.0</string>
     <key>CFBundleVersion</key>
