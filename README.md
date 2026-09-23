@@ -58,6 +58,17 @@ Double-click `FrameLab.dmg` in the repository root or mount from terminal:
 open FrameLab.dmg
 ```
 
+### 4. Install & Test on iPhone via IPA (iOS Sideloading)
+The standalone `FrameLabIOS.ipa` package is pre-built in the repository root:
+1. Connect your iPhone via USB.
+2. Open [Sideloadly](https://sideloadly.io/) or [AltStore](https://altstore.io/) on your Mac/PC.
+3. Drag `FrameLabIOS.ipa` into Sideloadly, enter your Apple ID, and click **Start**.
+
+To rebuild the iOS `.ipa` package at any time from terminal:
+```bash
+./scripts/build_ipa.sh
+```
+
 ### 4. Open in Xcode (macOS & iOS Targets)
 Double-click `Package.swift` or open `FrameLab.xcworkspace` in Xcode. Select either the **FrameLabMac** or **FrameLabIOS** scheme and press **Run (Cmd+R)**.
 

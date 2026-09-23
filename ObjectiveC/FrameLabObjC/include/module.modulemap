@@ -1,0 +1,4 @@
+module FrameLabObjC [system] {
+    header "FrameLabObjC.h"
+    export *
+}
