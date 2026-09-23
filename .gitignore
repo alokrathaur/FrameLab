@@ -18,3 +18,9 @@ dist/
 
 # Generated logs & scratch
 *.log
+
+# Media files
+*.mp4
+*.MP4
+*.mov
+*.MOV

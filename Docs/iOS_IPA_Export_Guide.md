@@ -99,7 +99,17 @@ The resulting file will be located at `./dist/ios/FrameLabIOS.ipa`.
 
 ---
 
-## 5. How to Sideload & Install the `.ipa` on iPhone
+## 5. How to Install the `.ipa` on iPhone
+
+### Option 0: Direct Wireless Install via Diawi QR Code (Fastest)
+Scan this QR code with your iPhone camera or open [https://i.diawi.com/fivdHX](https://i.diawi.com/fivdHX) in Mobile Safari:
+
+<p align="center">
+  <a href="https://i.diawi.com/fivdHX">
+    <img src="assets/diawi_qr_code.png" width="200" alt="Diawi QR Code" />
+  </a>
+</p>
+
 
 Once you have the `.ipa` file, you can install it using any of the following tools:
 
