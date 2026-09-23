@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shutil
+import plistlib
 
 repo_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sdk_path = '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.0.sdk'
@@ -156,13 +157,64 @@ for size, name in [
 ]:
     subprocess.run(['sips', '-z', str(size), str(size), base_png, '--out', os.path.join(payload_app, name)], capture_output=True)
 
-print("[6/6] Codesigning ad-hoc and packaging FrameLabIOS.ipa...")
-subprocess.run(['codesign', '-f', '-s', '-', '--timestamp=none', payload_app], check=True)
+# Check for provisioning profile
+profile_path = None
+for candidate in [
+    os.path.join(repo_dir, 'embedded.mobileprovision'),
+    os.path.join(repo_dir, 'FrameLab.mobileprovision'),
+]:
+    if os.path.exists(candidate):
+        profile_path = candidate
+        break
+
+if not profile_path:
+    # check for any .mobileprovision in repo root
+    for f in os.listdir(repo_dir):
+        if f.endswith('.mobileprovision'):
+            profile_path = os.path.join(repo_dir, f)
+            break
+
+print("[6/6] Codesigning and packaging FrameLabIOS.ipa...")
+if profile_path and os.path.exists(profile_path):
+    print(f"  -> Found Provisioning Profile: {profile_path}")
+    embedded_dest = os.path.join(payload_app, 'embedded.mobileprovision')
+    shutil.copyfile(profile_path, embedded_dest)
+    
+    # Extract entitlements
+    entitlements_xml = subprocess.run(['security', 'cms', '-D', '-i', profile_path], capture_output=True, text=True)
+    if entitlements_xml.returncode == 0:
+        try:
+            plist_data = plistlib.loads(entitlements_xml.stdout.encode('utf-8'))
+            entitlements = plist_data.get('Entitlements', {})
+            ent_path = os.path.join(build_tmp, 'entitlements.plist')
+            with open(ent_path, 'wb') as ef:
+                plistlib.dump(entitlements, ef)
+            
+            # Find distribution identity
+            res_id = subprocess.run(['security', 'find-identity', '-v', '-p', 'codesigning'], capture_output=True, text=True)
+            cert_name = "Apple Distribution: Alok Rathaur (A54KS68ZGH)"
+            if cert_name not in res_id.stdout:
+                cert_name = "-"
+            
+            print(f"  -> Signing with: {cert_name}")
+            subprocess.run(['codesign', '-f', '-s', cert_name, '--entitlements', ent_path, '--timestamp=none', payload_app], check=True)
+        except Exception as e:
+            print("  Warning parsing entitlements:", e)
+            subprocess.run(['codesign', '-f', '-s', '-', '--timestamp=none', payload_app], check=True)
+    else:
+        subprocess.run(['codesign', '-f', '-s', '-', '--timestamp=none', payload_app], check=True)
+else:
+    print("  -> Notice: No .mobileprovision found in repository root.")
+    print("  -> Signing ad-hoc for Sideloadly (Diawi requires embedded.mobileprovision).")
+    subprocess.run(['codesign', '-f', '-s', '-', '--timestamp=none', payload_app], check=True)
 
 ipa_path = os.path.join(dist_ios, 'FrameLabIOS.ipa')
 if os.path.exists(ipa_path):
     os.remove(ipa_path)
 subprocess.run(['zip', '-qr', 'FrameLabIOS.ipa', 'Payload'], cwd=dist_ios, check=True)
+
+# Also copy to repo root
+shutil.copyfile(ipa_path, os.path.join(repo_dir, 'FrameLabIOS.ipa'))
 
 shutil.rmtree(build_tmp)
 
@@ -170,4 +222,7 @@ print(f"======================================================")
 print(f" SUCCESS: IPA generated successfully!")
 print(f" File: {ipa_path}")
 print(f" Size: {os.path.getsize(ipa_path)} bytes")
+if not profile_path:
+    print(" TIP FOR DIAWI: Drop your downloaded 'embedded.mobileprovision'")
+    print(" into the project root and run ./scripts/build_ipa.sh again.")
 print(f"======================================================")
