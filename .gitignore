@@ -26,3 +26,6 @@ dist/
 !Docs/assets/*.MP4
 *.mov
 *.MOV
+
+# iOS Provisioning Profiles (contains private UDIDs)
+*.mobileprovision
